@@ -1,0 +1,2 @@
+class Stagecoach < CardType
+end

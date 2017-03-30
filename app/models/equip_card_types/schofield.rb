@@ -1,2 +1,2 @@
-class EquipCardTypes::Schofield < CardType 
+class Schofield < CardType 
 end

@@ -1,2 +1,2 @@
-class EquipCardTypes::RevCarbine < CardType 
+class RevCarbine < CardType 
 end

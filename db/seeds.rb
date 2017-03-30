@@ -41,7 +41,7 @@ roles.each do |role|
 	Role.create(type: role)
 end
 
-card_types_array = [['Bang', 'Bang!', 'Shoot at someone (lose life point)'],
+card_types_array = [['BangCard', 'Bang!', 'Shoot at someone (lose life point)'],
 ['Missed', 'Missed!', 'Bang! shot misses'],
 ['Beer', 'Beer', 'Regain 1 life point'],
 ['CatBalou', 'Cat Balou', 'Discard one card (in hand or play) of any player'],
@@ -61,48 +61,55 @@ card_types_array = [['Bang', 'Bang!', 'Shoot at someone (lose life point)'],
 ['Schofield', 'Schofield', 'Range of 2'],
 ['Volcanic', 'Volcanic', 'Range of 1, multiple Bang!s per turn'],
 ['Remington', 'Remington', 'Range of 3'],
-['RevCarabine', 'Rev Carabine', 'Range of 4'],
+['RevCarbine', 'Rev Carabine', 'Range of 4'],
 ['Winchester', 'Winchester', 'Range of 5']]
 
 card_types_array.each do |c_type|
-	CardType.new(type: c_type[0], name: c_type[1], description: c_type[2])
+	CardType.create(type: c_type[0], name: c_type[1], description: c_type[2])
 end
 
 25.times do |i|
-	Card.new(card_type_id: 0, game_id: 0, position: i, location: :deck)
+	Card.create(card_type_id: 0, game_id: 0, position: i, location: :deck)
 end
 
 12.times do |i|
-	Card.new(card_type_id: 1, game_id: 0, position: i + 25, location: :deck)
+	Card.create(card_type_id: 1, game_id: 0, position: i + 25, location: :deck)
 end
 
 6.times do |i|
-	Card.new(card_type_id: 2, game_id: 0, position: i + 37, location: :deck)
+	Card.create(card_type_id: 2, game_id: 0, position: i + 37, location: :deck)
 end
 
 4.times do |i|
-	Card.new(card_type_id: 3, game_id: 0, position: i + 43, location: :deck)
-	Card.new(card_type_id: 4, game_id: 0, position: i + 47, location: :deck)
+	Card.create(card_type_id: 3, game_id: 0, position: i + 43, location: :deck)
+	Card.create(card_type_id: 4, game_id: 0, position: i + 47, location: :deck)
 end
 
 3.times do |i|
-	Card.new(card_type_id: 5, game_id: 0, position: i + 51, location: :deck)
-	Card.new(card_type_id: 12, game_id: 0, position: i + 63, location: :deck)
+	Card.create(card_type_id: 5, game_id: 0, position: i + 51, location: :deck)
+	Card.create(card_type_id: 12, game_id: 0, position: i + 63, location: :deck)
+	Card.create(card_type_id: 17, game_id: 0, position: i + 72, location: :deck)
 end
 
 2.times do |i|
-	Card.new(card_type_id: 6, game_id: 0, position: i + 54, location: :deck)
-	Card.new(card_type_id: 13, game_id: 0, position: i + 66, location: :deck)
-	Card.new(card_type_id: 15, game_id: 0, position: i + 69, location: :deck)
+	Card.create(card_type_id: 6, game_id: 0, position: i + 54, location: :deck)
+	Card.create(card_type_id: 13, game_id: 0, position: i + 66, location: :deck)
+	Card.create(card_type_id: 15, game_id: 0, position: i + 69, location: :deck)
+	Card.create(card_type_id: 18, game_id: 0, position: i + 75, location: :deck)
 end
 
 2.times do |i|
-	Card.new(card_type_id: 7, game_id: 0, position: i + 56, location: :deck)
-	Card.new(card_type_id: 8, game_id: 0, position: i + 58, location: :deck)
+	Card.create(card_type_id: 7, game_id: 0, position: i + 56, location: :deck)
+	Card.create(card_type_id: 8, game_id: 0, position: i + 58, location: :deck)
 end
 
-Card.new(card_type_id: 9, game_id: 0, position: 60, location: :deck)
-Card.new(card_type_id: 10, game_id: 0, position: 61, location: :deck)
-Card.new(card_type_id: 11, game_id: 0, position: 62, location: :deck)
-Card.new(card_type_id: 14, game_id: 0, position: 68, location: :deck)
+Card.create(card_type_id: 9, game_id: 0, position: 60, location: :deck)
+Card.create(card_type_id: 10, game_id: 0, position: 61, location: :deck)
+Card.create(card_type_id: 11, game_id: 0, position: 62, location: :deck)
+Card.create(card_type_id: 14, game_id: 0, position: 68, location: :deck)
+Card.create(card_type_id: 16, game_id: 0, position: 71, location: :deck)
+Card.create(card_type_id: 19, game_id: 0, position: 77, location: :deck)
+Card.create(card_type_id: 20, game_id: 0, position: 78, location: :deck)
+Card.create(card_type_id: 21, game_id: 0, position: 79, location: :deck)
+
 

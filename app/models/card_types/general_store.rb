@@ -1,0 +1,2 @@
+class GeneralStore < CardType
+end

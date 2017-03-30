@@ -1,0 +1,2 @@
+class CatBalou < CardType
+end

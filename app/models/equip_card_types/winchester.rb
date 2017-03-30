@@ -1,2 +1,2 @@
-class EquipCardTypes::Winchester < CardType 
+class Winchester < CardType 
 end

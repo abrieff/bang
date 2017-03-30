@@ -1,2 +1,2 @@
-class EquipCardTypes::Dynamite < CardType 
+class Dynamite < CardType 
 end

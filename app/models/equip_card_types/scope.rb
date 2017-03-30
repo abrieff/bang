@@ -1,2 +1,2 @@
-class EquipCardTypes::Scope < CardType 
+class Scope < CardType 
 end

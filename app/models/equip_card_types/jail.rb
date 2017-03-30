@@ -1,2 +1,2 @@
-class EquipCardTypes::Jail < CardType 
+class Jail < CardType 
 end

@@ -14,7 +14,7 @@ class CreateInitialSchema < ActiveRecord::Migration[5.0]
     	t.string :name, null: false
     end
 
-    create_table :games_users do |t|
+    create_table :players do |t|
     	t.integer :user_id, null: false
     	t.integer :game_id, null: false
     	t.integer :character_id
@@ -49,10 +49,12 @@ class CreateInitialSchema < ActiveRecord::Migration[5.0]
 		t.integer :card_type_id, null: false
 	end
 
- 	add_foreign_key :game_users, :games
- 	add_foreign_key :game_users, :users
- 	add_foreign_key :game_users, :roles
- 	add_foreign_key :game_users, :characters
- 	add_foreign_key :characters, :abilities
+ 	add_foreign_key :players, :games
+ 	add_foreign_key :players, :users
+ 	add_foreign_key :players, :roles
+ 	add_foreign_key :players, :characters
+ 	add_foreign_key :cards, :games
+ 	add_foreign_key :cards, :games_users
+ 	add_foreign_key :cards, :card_types
   end
 end

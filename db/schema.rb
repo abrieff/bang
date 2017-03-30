@@ -12,39 +12,48 @@
 
 ActiveRecord::Schema.define(version: 20170330183727) do
 
-  create_table "abilities", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+  create_table "card_types", force: :cascade do |t|
+    t.string "type",           null: false
+    t.string "name",           null: false
+    t.text   "description"
+    t.string "image_filename"
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.integer "game_id",                   null: false
+    t.integer "location",      default: 0, null: false
+    t.integer "games_user_id"
+    t.integer "position"
+    t.integer "card_type_id",              null: false
   end
 
   create_table "characters", force: :cascade do |t|
-    t.string  "name"
-    t.string  "description"
-    t.string "ability_type"
-    t.integer "health"
+    t.string  "name",                     null: false
+    t.text    "description"
+    t.integer "ability_type"
+    t.integer "health",       default: 4, null: false
   end
 
   create_table "games", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
   end
 
-  create_table "games_users", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "game_id"
+  create_table "players", force: :cascade do |t|
+    t.integer "user_id",                  null: false
+    t.integer "game_id",                  null: false
     t.integer "character_id"
     t.integer "role_id"
-    t.integer "health"
-    t.integer ""
+    t.integer "health",       default: 4
   end
 
   create_table "roles", force: :cascade do |t|
-    t.string "type"
-    t.string "description"
+    t.string "type",        default: "Outlaw", null: false
+    t.text   "description"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name",  null: false
+    t.string   "last_name",   null: false
     t.string   "email"
     t.string   "password"
     t.string   "nickname"

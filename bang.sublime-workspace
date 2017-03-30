@@ -1,0 +1,1410 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"outl",
+				"outlaws_team_wins"
+			],
+			[
+				"sher",
+				"sheriffs_team_wins"
+			],
+			[
+				"card",
+				"card_type_id"
+			],
+			[
+				"charac",
+				"character"
+			],
+			[
+				"game",
+				"game_users"
+			],
+			[
+				"appro",
+				"approvable_timesheets"
+			],
+			[
+				"submitt",
+				"submitted_timesheets"
+			],
+			[
+				"app",
+				"approvable_timesheets"
+			],
+			[
+				"associa",
+				"associates_sent"
+			],
+			[
+				"str",
+				"string_hash"
+			],
+			[
+				"max",
+				"max_heap"
+			],
+			[
+				"min",
+				"min_heap"
+			],
+			[
+				"right",
+				"right_child_index"
+			],
+			[
+				"righ",
+				"right_child_index"
+			],
+			[
+				"left_c",
+				"left_child_index"
+			],
+			[
+				"delete",
+				"deleted_songs"
+			],
+			[
+				"file",
+				"file_location"
+			],
+			[
+				"song",
+				"song_array"
+			],
+			[
+				"dec",
+				"decoded_location"
+			],
+			[
+				"son",
+				"song_array"
+			],
+			[
+				"unrea",
+				"unread_messages_per_thread"
+			],
+			[
+				"mes",
+				"message_thread_id"
+			],
+			[
+				"me",
+				"message_thread_ids"
+			],
+			[
+				"mess",
+				"message_thread_ids"
+			],
+			[
+				"messag",
+				"message_thread_ids"
+			],
+			[
+				"mea",
+				"message_thread_id"
+			],
+			[
+				"last",
+				"last_message_id"
+			],
+			[
+				"messa",
+				"message_thread_id"
+			],
+			[
+				"message",
+				"message_threads"
+			],
+			[
+				"user",
+				"users_message_threads"
+			],
+			[
+				"care",
+				"care_manager_1"
+			],
+			[
+				"pate",
+				"patient_1"
+			],
+			[
+				"unread",
+				"unread_messages"
+			],
+			[
+				"patien",
+				"patient_1"
+			],
+			[
+				"message_t",
+				"message_thread_1"
+			],
+			[
+				"message_",
+				"message_thread_1"
+			],
+			[
+				"users",
+				"users_message_threads"
+			],
+			[
+				"user_",
+				"user_message_thread"
+			],
+			[
+				"start",
+				"start_word"
+			],
+			[
+				"sta",
+				"start_word"
+			],
+			[
+				"end_",
+				"end_word"
+			],
+			[
+				"hash",
+				"hashify"
+			],
+			[
+				"has",
+				"hashify"
+			],
+			[
+				"letter",
+				"letter_hash"
+			],
+			[
+				"max_",
+				"max_end_index"
+			],
+			[
+				"st",
+				"start_index"
+			],
+			[
+				"sorted",
+				"sorted_word_list"
+			],
+			[
+				"sort",
+				"sorted_words"
+			],
+			[
+				"new",
+				"new_high_score"
+			],
+			[
+				"end",
+				"end_index"
+			],
+			[
+				"score",
+				"score_word_pair"
+			],
+			[
+				"let",
+				"letter_hash"
+			],
+			[
+				"cu",
+				"current_index"
+			],
+			[
+				"curr",
+				"current_max_score"
+			],
+			[
+				"current",
+				"current_max_score"
+			],
+			[
+				"cur",
+				"current_max_score"
+			],
+			[
+				"sec",
+				"second_half"
+			],
+			[
+				"Post",
+				"Post"
+			],
+			[
+				"auth",
+				"authentication"
+			],
+			[
+				"get",
+				"get_user_model"
+			],
+			[
+				"endzone",
+				"endzones"
+			],
+			[
+				"check",
+				"check_endzones"
+			],
+			[
+				"defau",
+				"defaultdict"
+			],
+			[
+				"obje",
+				"object_sprite"
+			],
+			[
+				"car",
+				"car_collision"
+			],
+			[
+				"upd",
+				"updx"
+			],
+			[
+				"spr",
+				"spritesheet"
+			],
+			[
+				"s",
+				"object_sprite"
+			],
+			[
+				"set",
+				"set_up_lanes"
+			],
+			[
+				"spri",
+				"spritesheet"
+			],
+			[
+				"sprite",
+				"sprite"
+			],
+			[
+				"lane",
+				"lane_num"
+			],
+			[
+				"ctx",
+				"ctx"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"gameov",
+				"gameover"
+			],
+			[
+				"hangman",
+				"hangman_empty"
+			],
+			[
+				"gameover",
+				"gameover_"
+			],
+			[
+				"gameo",
+				"gameover_"
+			],
+			[
+				"Max",
+				"MAX_WRONG_GUESSES"
+			],
+			[
+				"MA",
+				"MAX_WRONG_GUESSES"
+			],
+			[
+				"Card",
+				"CardioSessionForm"
+			],
+			[
+				"DEFAUL",
+				"DEFAULT_FILE_STORAGE"
+			],
+			[
+				"redis",
+				"redis_url"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"dele",
+				"delete_duplicates"
+			],
+			[
+				"Model",
+				"ModelForm	ModelForm"
+			],
+			[
+				"model",
+				"modelformset_factory"
+			],
+			[
+				"render",
+				"render_to_response"
+			],
+			[
+				"mode",
+				"modelformset_factory"
+			],
+			[
+				"Audio",
+				"Audio"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"al",
+				"alphabet2"
+			],
+			[
+				"i",
+				"i"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/models/win_checker.rb",
+			"settings":
+			{
+				"buffer_size": 872,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 1167 files for \"GamesUser\" (case sensitive)\n\n0 matches across 0 files\n",
+			"settings":
+			{
+				"buffer_size": 80,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"contents": "class Player < ActiveRecord::Base\n	belongs_to :user\n	belongs_to :game\n	belongs_to :character\n	belongs_to :role\n\n	scope sheriff: { joins(:roles).where(roles: {type: 'Sheriff'}).first }\n	scope deputies: { joins(:roles).where(roles: {type: 'Deputy'}) }\n	scope outlaws: { joins(:roles).where(roles: {type: 'Outlaw'}) }\n	scope renegade: { joins(:roles).where(roles: {type: 'Renegade'}).first }\nend",
+			"file": "app/models/player.rb",
+			"file_size": 393,
+			"file_write_time": 1490918149000000,
+			"settings":
+			{
+				"buffer_size": 392,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/game.rb",
+			"settings":
+			{
+				"buffer_size": 91,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/user.rb",
+			"settings":
+			{
+				"buffer_size": 90,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/migrate/20170330183727_create_initial_schema.rb",
+			"settings":
+			{
+				"buffer_size": 1464,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "class Role < ActiveRecord::Base\n\n\nend",
+			"file": "app/models/role.rb",
+			"file_size": 127,
+			"file_write_time": 1490915636000000,
+			"settings":
+			{
+				"buffer_size": 37,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/bang_card.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/db/seeds.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/bang.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/sheriff.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/remington.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_type.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/db/migrate/20170330183727_create_initial_schema.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/deputy.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/renegade.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/outlaw.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/games_user.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/role.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/config/application.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/barrel.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/dynamite.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/jail.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/mustang.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/rev_carbine.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/schofield.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/scope.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/volcanic.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/winchester.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/win_checker.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/game.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/beer.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/cat_balou.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/duel.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/gatling.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/general_store.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/indians.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/missed.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/panic.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/saloon.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/stagecoach.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/wells_fargo.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/class WinChecker",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_type.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/Gemfile",
+		"/Users/andrewbrieff1/Documents/github/bang/db/schema.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/jail.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_type.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/untitled",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/character.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/bang.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/missed.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/ability.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/user.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/class User < ActiveRecord::Base",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/game_user.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/sheriff.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/deputy.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/outlaw.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/renegade.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/models/associate.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/db/schema.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/db/migrate/20170328140055_add_new_truck_types.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/customer/invoices/show.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/assets/stylesheets/customer/customer.scss",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/fleet/jobs/edit.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/assets/stylesheets/fleet/fleet.scss",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/db/seeds.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/.gitignore",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/lib/tasks/truck_types.rake",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/models/truck_type.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/admin/jobs/new.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/customer/jobs/new.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/fleet/invoices/show.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/fleet/invitations/show.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/models/invitation.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/config/environments/production.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/models/truck.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/Gemfile",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/config/environments/development.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/config/initializers/twilio.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/services/job_booked_sms_service.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/services/job_matcher_service.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/controllers/public/drivers_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/public/drivers/new.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/public/associates/new.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/public/shared/_driver_get_started_modal.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/config/routes.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/controllers/public/associates_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/models/invoice.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/admin/invoices/show.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/controllers/invoices_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/controllers/customer/invoices_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/controllers/associate/sign_ups_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/controllers/associate_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/controllers/customer_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/controllers/customer/sign_ups_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/customer/sign_ups/new.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/controllers/customer/users_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/associate/sign_ups/create_associate.html.slim",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views/customer/sign_ups/new.html.erb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/controllers/customer/customers_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/controllers/admin/associates_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/test/controllers/customer/job_sites_controller_test.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/lib/tasks/random_data.rake",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/models/shift.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/models/driver.rb",
+		"/Users/andrewbrieff1/Documents/github/haulhub_web/app/models/customer.rb",
+		"/Users/andrewbrieff1/Documents/github/itunes_cleanup/db/development.sqlite3",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/controllers/message_threads_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/users_message_thread.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/message.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/user.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/db/migrate/20170308152814_initial_db_schema.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/spec/controllers/message_threads_controller_spec.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/db/seeds.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/db/schema.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/message_thread.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/controllers/messages_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/spec/controllers/messages_controller_spec.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/care_manager.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/patient.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/controllers/api/message_threads_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/controllers/api/messages_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/controllers/application_controller.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/config/routes.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/organization.rb",
+		"/Users/andrewbrieff1/Documents/github/wellframe/Gemfile",
+		"/Data Structures:",
+		"/Users/andrewbrieff1/Documents/ruby_practice/linked_list/linked_list.rb",
+		"/Users/andrewbrieff1/Documents/ruby_practice/linked_list/node.rb",
+		"/Users/andrewbrieff1/Documents/GitHub/travel_blog/db/migrate/20160811213330_create_posts.rb",
+		"/Users/andrewbrieff1/Documents/GitHub/travel_blog/db/migrate/20160811213237_create_posts_table.rb",
+		"/Users/andrewbrieff1/Documents/GitHub/travel_blog/public/robots.txt"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"/Users/andrewbrieff1/Documents/github/haulhub_web/",
+			"/Users/andrewbrieff1/Documents/github/haulhub_web/app/",
+			"/Users/andrewbrieff1/Documents/github/haulhub_web/app/views",
+			"/Users/andrewbrieff1/Documents/github/haulhub_web/",
+			"/Users/andrewbrieff1/Documents/github/haulhub_web/db/migrate",
+			"*.rb",
+			"",
+			"/Users/andrewbrieff1/Documents/github/wellframe/app/controllers/api",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"GamesUser",
+			"Ability",
+			"abilities",
+			"new",
+			"EquipCardTypes::",
+			"ActionCardTypes::",
+			"< EquipCardType",
+			"< ActionCardType",
+			"< CardType",
+			" ,",
+			" = ",
+			"[",
+			"(3 life points)",
+			"(4 life points)",
+			"capistrano",
+			"config.active_job",
+			"Job",
+			"timesheet_approval_reminder",
+			"TimesheetApprovalReminderJob",
+			"timesheet_approval_reminder",
+			"TimesheetAppro",
+			"TimesheetApprovalRem",
+			"associate",
+			"truck_types",
+			"truck_type",
+			"$red",
+			"Assign",
+			"warning",
+			"Assign",
+			"Assign Drivers",
+			"Accept",
+			"Assign Drivers",
+			"Accept",
+			"truck_type",
+			"TruckType",
+			"Twilio",
+			"paperclip",
+			"image",
+			"RMagick",
+			"magick",
+			"image_magick",
+			"ImageMagick",
+			"10 Wheel",
+			"Invoice::",
+			"public",
+			"with_phone",
+			"authenticate_associate",
+			"create_company",
+			"render ",
+			"shared:",
+			"shared",
+			"customer",
+			"sign_ups",
+			"associates",
+			"downcase",
+			"HaulhubSetting",
+			"gsub",
+			"byebug",
+			"Last_seen_at",
+			"byebug",
+			"DateTime.now",
+			"byebug",
+			"var",
+			"get_user_model()",
+			"class",
+			"FOREIGNKEY('USER'",
+			"console.",
+			")\n",
+			"album",
+			"True",
+			"check",
+			"cookie",
+			"evening"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"create",
+			"",
+			"< CardType",
+			"< ActionCardType",
+			"',",
+			"', '",
+			"['",
+			", 3]",
+			", 4]",
+			"settings.AUTH_USER_MODEL",
+			"ForeignKey(get_user_model()"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/models/win_checker.rb",
+					"settings":
+					{
+						"buffer_size": 872,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48,
+								48
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 80,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/player.rb",
+					"settings":
+					{
+						"buffer_size": 392,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								388,
+								388
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/models/game.rb",
+					"settings":
+					{
+						"buffer_size": 91,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								86,
+								86
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/models/user.rb",
+					"settings":
+					{
+						"buffer_size": 90,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								86,
+								86
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "db/migrate/20170330183727_create_initial_schema.rb",
+					"settings":
+					{
+						"buffer_size": 1464,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1330,
+								1330
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 181.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/models/role.rb",
+					"settings":
+					{
+						"buffer_size": 37,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								33
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.341608321464,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"migrate",
+				"db/migrate/20170330183727_create_initial_schema.rb"
+			],
+			[
+				"card",
+				"app/models/card.rb"
+			],
+			[
+				"see",
+				"db/seeds.rb"
+			],
+			[
+				"games_us",
+				"app/models/games_user.rb"
+			],
+			[
+				"sc",
+				"db/schema.rb"
+			],
+			[
+				"db/",
+				"db/schema.rb"
+			],
+			[
+				"gemf",
+				"Gemfile"
+			],
+			[
+				"procfi",
+				"Procfile.dev"
+			],
+			[
+				"proc",
+				"Procfile"
+			],
+			[
+				"schedu",
+				"config/schedule.rb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"schedule",
+				"config/schedule.rb"
+			],
+			[
+				"sche",
+				"db/schema.rb"
+			],
+			[
+				"application_jo",
+				"app/jobs/application_job.rb"
+			],
+			[
+				"schem",
+				"db/schema.rb"
+			],
+			[
+				"timeshe",
+				"app/models/timesheet.rb"
+			],
+			[
+				"associate",
+				"app/models/associate.rb"
+			],
+			[
+				"job_s",
+				"app/models/job_site.rb"
+			],
+			[
+				"timesh",
+				"app/models/timesheet.rb"
+			],
+			[
+				"timesheet_appr",
+				"app/services/sms_services/timesheet_approval_sms_service.rb"
+			],
+			[
+				"timeshee",
+				"app/models/timesheet.rb"
+			],
+			[
+				"job_site",
+				"app/models/job_site.rb"
+			],
+			[
+				"timesheet_appro",
+				"app/jobs/timesheet_approval_reminder_job.rb"
+			],
+			[
+				"timesheetap",
+				"lib/tasks/timesheet_approval_reminder.rake"
+			],
+			[
+				"timesheet.",
+				"app/models/timesheet.rb"
+			],
+			[
+				"timesheet_app",
+				"app/services/sms_services/timesheet_approval_sms_service.rb"
+			],
+			[
+				"asso",
+				"app/models/associate.rb"
+			],
+			[
+				"schema",
+				"db/schema.rb"
+			],
+			[
+				"db/sche",
+				"db/schema.rb"
+			],
+			[
+				"truck_ty",
+				"app/models/truck_type.rb"
+			],
+			[
+				"seed",
+				"db/seeds.rb"
+			],
+			[
+				"add_new",
+				"db/migrate/20170328140055_add_new_truck_types.rb"
+			],
+			[
+				"truck",
+				"app/models/truck.rb"
+			],
+			[
+				"job_matcher_ser",
+				"app/services/job_matcher_service.rb"
+			],
+			[
+				"job_boo",
+				"app/services/job_booked_sms_service.rb"
+			],
+			[
+				"twilio",
+				"config/initializers/twilio.rb"
+			],
+			[
+				"devel",
+				"config/environments/development.rb"
+			],
+			[
+				"customer/invoices/sh",
+				"app/views/customer/invoices/show.html.slim"
+			],
+			[
+				"jobs/new",
+				"app/views/customer/jobs/new.html.slim"
+			],
+			[
+				"truck_typ",
+				"app/models/truck_type.rb"
+			],
+			[
+				"invoices_cont",
+				"app/controllers/customer/invoices_controller.rb"
+			],
+			[
+				"invoices_co",
+				"app/controllers/invoices_controller.rb"
+			],
+			[
+				"invoice.rb",
+				"app/models/invoice.rb"
+			],
+			[
+				"invoi",
+				"app/views/admin/invoices/show.html.slim"
+			],
+			[
+				"invo",
+				"app/models/invoice.rb"
+			],
+			[
+				"invoice/s",
+				"app/views/admin/invoices/show.html.slim"
+			],
+			[
+				"associates_",
+				"app/controllers/public/associates_controller.rb"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"customer_con",
+				"app/controllers/customer_controller.rb"
+			],
+			[
+				"associate_cont",
+				"app/controllers/associate_controller.rb"
+			],
+			[
+				"associates_c",
+				"app/controllers/admin/associates_controller.rb"
+			],
+			[
+				"associ",
+				"app/models/associate.rb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"users_co",
+				"app/controllers/customer/users_controller.rb"
+			],
+			[
+				"db/s",
+				"db/schema.rb"
+			],
+			[
+				"customer/sign",
+				"app/controllers/customer/sign_ups_controller.rb"
+			],
+			[
+				"customer",
+				"app/models/customer.rb"
+			],
+			[
+				"driver",
+				"app/models/driver.rb"
+			],
+			[
+				"rout",
+				"config/routes.rb"
+			],
+			[
+				"shift",
+				"app/models/shift.rb"
+			],
+			[
+				"random",
+				"lib/tasks/random_data.rake"
+			],
+			[
+				"invoice",
+				"app/views/admin/invoices/show.html.slim"
+			],
+			[
+				"haul",
+				"app/models/haulhub_setting.rb"
+			],
+			[
+				".e",
+				".env"
+			],
+			[
+				"users_m",
+				"app/models/users_message_thread.rb"
+			],
+			[
+				"messa",
+				"app/models/message.rb"
+			],
+			[
+				"message_threads",
+				"spec/controllers/message_threads_controller_spec.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"spec",
+				"spec/controllers/message_threads_controller_spec.rb"
+			],
+			[
+				"mi",
+				"db/migrate/20170308152814_initial_db_schema.rb"
+			],
+			[
+				"sch",
+				"db/schema.rb"
+			],
+			[
+				"mig",
+				"db/migrate/20170308152814_initial_db_schema.rb"
+			],
+			[
+				"mes",
+				"app/models/message.rb"
+			],
+			[
+				"users_",
+				"app/models/users_message_thread.rb"
+			],
+			[
+				"",
+				"app/controllers/message_threads_controller.rb"
+			],
+			[
+				"users",
+				"app/models/users_message_thread.rb"
+			],
+			[
+				"messages",
+				"app/controllers/messages_controller.rb"
+			],
+			[
+				"message_threa",
+				"app/controllers/message_threads_controller.rb"
+			],
+			[
+				"data",
+				"app/models/users_message_thread.rb"
+			],
+			[
+				"user_me",
+				"app/models/users_message_thread.rb"
+			],
+			[
+				"unread",
+				"/Users/andrewbrieff1/Documents/github/wellframe/spec/controllers/message_threads_controller_spec.rb"
+			],
+			[
+				"messages_",
+				"spec/controllers/message_threads_controller_spec.rb"
+			],
+			[
+				"mess",
+				"app/models/message.rb"
+			],
+			[
+				"messages_contr",
+				"app/controllers/messages_controller.rb"
+			],
+			[
+				"mesage_tr",
+				"app/models/message_thread.rb"
+			],
+			[
+				"rspec",
+				"spec/controllers/message_threads_controller_spec.rb"
+			],
+			[
+				"users_me",
+				"app/models/users_message_thread.rb"
+			],
+			[
+				"migra",
+				"db/migrate/20170308152814_initial_db_schema.rb"
+			],
+			[
+				"spec/mess",
+				"spec/controllers/message_threads_controller_spec.rb"
+			],
+			[
+				"messages_controller_spec",
+				"spec/controllers/messages_controller_spec.rb"
+			],
+			[
+				"message_t",
+				"app/models/message_thread.rb"
+			],
+			[
+				"messages_contro",
+				"app/controllers/messages_controller.rb"
+			],
+			[
+				"user_m",
+				"app/models/users_message_thread.rb"
+			],
+			[
+				"messages_con",
+				"spec/controllers/message_threads_controller_spec.rb"
+			],
+			[
+				"patient",
+				"app/models/patient.rb"
+			],
+			[
+				"message",
+				"app/models/message.rb"
+			],
+			[
+				"care_",
+				"app/models/care_manager.rb"
+			],
+			[
+				"pat",
+				"app/models/patient.rb"
+			],
+			[
+				"mesa",
+				"app/controllers/api/messages_controller.rb"
+			],
+			[
+				"pati",
+				"app/models/patient.rb"
+			],
+			[
+				"me",
+				"app/controllers/api/message_threads_controller.rb"
+			],
+			[
+				"user_",
+				"app/models/users_message_thread.rb"
+			],
+			[
+				"message_thre",
+				"app/models/message_thread.rb"
+			],
+			[
+				"posts_co",
+				"app/controllers/posts_controller.rb"
+			],
+			[
+				"db/m",
+				"db/migrate/20160811213237_create_posts_table.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 197.0,
+	"status_bar_visible": true
+}

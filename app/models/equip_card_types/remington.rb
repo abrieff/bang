@@ -1,2 +1,2 @@
-class EquipCardTypes::Remington < CardType 
+class Remington < CardType 
 end

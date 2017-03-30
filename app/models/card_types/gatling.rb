@@ -1,0 +1,2 @@
+class Gatling < CardType
+end

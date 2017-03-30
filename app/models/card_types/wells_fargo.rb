@@ -1,0 +1,2 @@
+class WellsFargo < CardType
+end

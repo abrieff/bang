@@ -1,2 +1,2 @@
-class EquipCardTypes::Volcanic < CardType 
+class Volcanic < CardType 
 end

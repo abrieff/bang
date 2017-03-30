@@ -1,2 +1,2 @@
-class EquipCardTypes::Mustang < CardType 
+class Mustang < CardType 
 end

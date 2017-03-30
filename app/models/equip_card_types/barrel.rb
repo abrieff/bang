@@ -1,2 +1,2 @@
-class EquipCardTypes::Barrel < CardType 
+class Barrel < CardType 
 end

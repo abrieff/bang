@@ -1,0 +1,2 @@
+class BangCard < CardType
+end
