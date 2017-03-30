@@ -1,0 +1,2 @@
+class Outlaw < Role
+end

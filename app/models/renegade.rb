@@ -1,0 +1,2 @@
+class Renegade < Role
+end

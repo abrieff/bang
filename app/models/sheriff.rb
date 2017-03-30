@@ -1,0 +1,2 @@
+class Sheriff < Role
+end

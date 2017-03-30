@@ -1,0 +1,2 @@
+class Deputy < Role
+end
