@@ -32,6 +32,11 @@ users = User.all.to_a
 	Player.create(user: users[i], game: game)
 end
 
-deck = CardDeck.new(game).shuffle
-role_deck = RoleDeck.new(game).assign
-character_deck = CharacterDeck.new(game).assign
+deck = CardDeck.new(game)
+role_deck = RoleDeck.new(game)
+character_deck = CharacterDeck.new(game)
+
+deck.shuffle
+role_deck.assign
+character_deck.assign
+deck.deal

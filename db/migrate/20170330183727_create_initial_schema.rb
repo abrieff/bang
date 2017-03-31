@@ -45,7 +45,7 @@ class CreateInitialSchema < ActiveRecord::Migration[5.0]
 	create_table :cards do |t|
 		t.integer :game_id, null: false
 		t.integer :location, default: 'deck', null: false
-		t.integer :games_user_id
+		t.integer :player_id
 		t.integer :position
 		t.integer :card_type_id, null: false
 	end

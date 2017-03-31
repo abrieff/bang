@@ -11,14 +11,48 @@ class CardDeck
   end
 
   def shuffle
-    positions = (0..cards.length - 1).to_a.shuffle
-    cards.each_with_index do |card, index|
+    positions = (0..unowned_cards.length - 1).to_a.shuffle
+    unowned_cards.each_with_index do |card, index|
       card.position = positions[index]
       card.save
     end
   end
 
-  def cards
-    @cards ||= Card.where(game: game, location: [:deck, :discard])
+  def deal
+    2.times do |i|
+      players.each do |player|
+        draw(player)
+      end
+    end
+  end
+
+  def draw(player)
+    player.draw(deck_cards.first)
+  end
+
+  def discard(card)
+    update(location: :discard, position: next_discard_position, player_id: nil)
+  end
+
+  private
+
+  def next_discard_position
+    (discard_cards.maximum(:position) || -1) + 1
+  end
+
+  def unowned_cards
+    Card.game(game).unowned_cards
+  end
+
+  def deck_cards
+    Card.game(game).deck
+  end
+
+  def discard_cards
+    Card.game(game).discard
+  end
+
+  def players
+    @players ||= game.players
   end
 end

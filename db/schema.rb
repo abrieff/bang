@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(version: 20170331004812) do
   end
 
   create_table "cards", force: :cascade do |t|
-    t.integer "game_id",                   null: false
-    t.integer "location",      default: 0, null: false
-    t.integer "games_user_id"
+    t.integer "game_id",                  null: false
+    t.integer "location",     default: 0, null: false
+    t.integer "player_id"
     t.integer "position"
-    t.integer "card_type_id",              null: false
+    t.integer "card_type_id",             null: false
   end
 
   create_table "characters", force: :cascade do |t|
