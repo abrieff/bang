@@ -41,75 +41,31 @@ roles.each do |role|
 	Role.create(type: role)
 end
 
-card_types_array = [['BangCard', 'Bang!', 'Shoot at someone (lose life point)'],
-['Missed', 'Missed!', 'Bang! shot misses'],
-['Beer', 'Beer', 'Regain 1 life point'],
-['CatBalou', 'Cat Balou', 'Discard one card (in hand or play) of any player'],
-['Panic', 'Panic', 'Steal a card (in hand or play) from a player at distance 1'],
-['Duel', 'Duel', 'Challenged player accepts duel by playing Bang!, challenger reciprocates, first to not play a Bang! card loses one point'],
-['GeneralStore', 'General Store', 'Flip over one card for each player, choose your cards'],
-['Indians', 'Indians', 'All other players discard a Bang! or lose a life point'],
-['Stagecoach', 'Stagecoach', 'Draw 2 cards'],
-['WellsFargo', 'Wells Fargo', 'Draw 3 cards'],
-['Saloon', 'Saloon', 'Everyone gets a beer (one life point)'],
-['Gatling', 'Gatling', 'Shoot one shot at everyone else'],
-['Jail', 'Jail', 'Player must “draw” a heart or lose first two steps of turn'],
-['Barrel', 'Barrel', 'When shot at, player may “draw” a heart to dodge shot'],
-['Dynamite', 'Dynamite', 'On next turn, if player “draws” a 2S-9S, dynamite explodes; if not, it is passed to next player who must “draw”; explosion costs 3 life points'],
-['Mustang', 'Mustang', 'Other players see you at distance increased by 1'],
-['Scope', 'Scope', 'You see other players at distance decreased by 1'],
-['Schofield', 'Schofield', 'Range of 2'],
-['Volcanic', 'Volcanic', 'Range of 1, multiple Bang!s per turn'],
-['Remington', 'Remington', 'Range of 3'],
-['RevCarbine', 'Rev Carabine', 'Range of 4'],
-['Winchester', 'Winchester', 'Range of 5']]
+card_types_array = [['BangCard', 'Bang!', 'Shoot at someone (lose life point)', 25],
+['Missed', 'Missed!', 'Bang! shot misses', 12],
+['Beer', 'Beer', 'Regain 1 life point', 6],
+['CatBalou', 'Cat Balou', 'Discard one card (in hand or play) of any player', 4],
+['Panic', 'Panic', 'Steal a card (in hand or play) from a player at distance 1', 4],
+['Duel', 'Duel', 'Challenged player accepts duel by playing Bang!, challenger reciprocates, first to not play a Bang! card loses one point', 3],
+['GeneralStore', 'General Store', 'Flip over one card for each player, choose your cards', 2],
+['Indians', 'Indians', 'All other players discard a Bang! or lose a life point', 2],
+['Stagecoach', 'Stagecoach', 'Draw 2 cards', 2],
+['WellsFargo', 'Wells Fargo', 'Draw 3 cards', 1],
+['Saloon', 'Saloon', 'Everyone gets a beer (one life point)', 1],
+['Gatling', 'Gatling', 'Shoot one shot at everyone else', 1],
+['Jail', 'Jail', 'Player must “draw” a heart or lose first two steps of turn', 3],
+['Barrel', 'Barrel', 'When shot at, player may “draw” a heart to dodge shot', 2],
+['Dynamite', 'Dynamite', 'On next turn, if player “draws” a 2S-9S, dynamite explodes; if not, it is passed to next player who must “draw”; explosion costs 3 life points', 1],
+['Mustang', 'Mustang', 'Other players see you at distance increased by 1', 2],
+['Scope', 'Scope', 'You see other players at distance decreased by 1', 1],
+['Schofield', 'Schofield', 'Range of 2', 3],
+['Volcanic', 'Volcanic', 'Range of 1, multiple Bang!s per turn', 2],
+['Remington', 'Remington', 'Range of 3', 1],
+['RevCarbine', 'Rev Carabine', 'Range of 4', 1],
+['Winchester', 'Winchester', 'Range of 5', 1]]
 
 card_types_array.each do |c_type|
-	CardType.create(type: c_type[0], name: c_type[1], description: c_type[2])
+	CardType.create(type: c_type[0], name: c_type[1], description: c_type[2], num_per_deck: c_type[3])
 end
 
-25.times do |i|
-	Card.create(card_type_id: 0, game_id: 0, position: i, location: :deck)
-end
-
-12.times do |i|
-	Card.create(card_type_id: 1, game_id: 0, position: i + 25, location: :deck)
-end
-
-6.times do |i|
-	Card.create(card_type_id: 2, game_id: 0, position: i + 37, location: :deck)
-end
-
-4.times do |i|
-	Card.create(card_type_id: 3, game_id: 0, position: i + 43, location: :deck)
-	Card.create(card_type_id: 4, game_id: 0, position: i + 47, location: :deck)
-end
-
-3.times do |i|
-	Card.create(card_type_id: 5, game_id: 0, position: i + 51, location: :deck)
-	Card.create(card_type_id: 12, game_id: 0, position: i + 63, location: :deck)
-	Card.create(card_type_id: 17, game_id: 0, position: i + 72, location: :deck)
-end
-
-2.times do |i|
-	Card.create(card_type_id: 6, game_id: 0, position: i + 54, location: :deck)
-	Card.create(card_type_id: 13, game_id: 0, position: i + 66, location: :deck)
-	Card.create(card_type_id: 15, game_id: 0, position: i + 69, location: :deck)
-	Card.create(card_type_id: 18, game_id: 0, position: i + 75, location: :deck)
-end
-
-2.times do |i|
-	Card.create(card_type_id: 7, game_id: 0, position: i + 56, location: :deck)
-	Card.create(card_type_id: 8, game_id: 0, position: i + 58, location: :deck)
-end
-
-Card.create(card_type_id: 9, game_id: 0, position: 60, location: :deck)
-Card.create(card_type_id: 10, game_id: 0, position: 61, location: :deck)
-Card.create(card_type_id: 11, game_id: 0, position: 62, location: :deck)
-Card.create(card_type_id: 14, game_id: 0, position: 68, location: :deck)
-Card.create(card_type_id: 16, game_id: 0, position: 71, location: :deck)
-Card.create(card_type_id: 19, game_id: 0, position: 77, location: :deck)
-Card.create(card_type_id: 20, game_id: 0, position: 78, location: :deck)
-Card.create(card_type_id: 21, game_id: 0, position: 79, location: :deck)
-
-
+deck = Deck.new(game)

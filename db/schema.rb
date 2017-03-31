@@ -13,10 +13,11 @@
 ActiveRecord::Schema.define(version: 20170330183727) do
 
   create_table "card_types", force: :cascade do |t|
-    t.string "type",           null: false
-    t.string "name",           null: false
-    t.text   "description"
-    t.string "image_filename"
+    t.string  "type",           null: false
+    t.string  "name",           null: false
+    t.text    "description"
+    t.integer "num_per_deck"
+    t.string  "image_filename"
   end
 
   create_table "cards", force: :cascade do |t|

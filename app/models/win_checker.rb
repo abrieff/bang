@@ -38,6 +38,8 @@ class WinChecker
 
 	private
 
+  attr_accessor :outlaws, :renegade, :sheriff, :deputies
+
 	def outlaws
 		@outlaws ||= players.outlaws
 	end

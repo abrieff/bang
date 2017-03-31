@@ -1,2 +1,2 @@
-class Mustang < CardType 
+class Mustang < CardType
 end

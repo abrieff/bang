@@ -1,2 +1,2 @@
-class Dynamite < CardType 
+class Dynamite < CardType
 end

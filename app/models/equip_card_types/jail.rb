@@ -1,2 +1,2 @@
-class Jail < CardType 
+class Jail < CardType
 end

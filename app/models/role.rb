@@ -1,6 +1,6 @@
 class Role < ActiveRecord::Base
 
-	def players(game)
-		game.games_users.includes(:roles).find_by(roles: { type: type })
-	end
+  def dead?
+    health == 0
+  end
 end

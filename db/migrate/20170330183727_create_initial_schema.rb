@@ -38,6 +38,7 @@ class CreateInitialSchema < ActiveRecord::Migration[5.0]
 		t.string :type, null: false
 		t.string :name, null: false
 		t.text :description
+    t.integer :num_per_deck
 		t.string :image_filename
 	end
 

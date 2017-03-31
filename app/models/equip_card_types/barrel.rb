@@ -1,2 +1,2 @@
-class Barrel < CardType 
+class Barrel < CardType
 end
