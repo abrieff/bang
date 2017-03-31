@@ -68,4 +68,6 @@ card_types_array.each do |c_type|
 	CardType.create(type: c_type[0], name: c_type[1], description: c_type[2], num_per_deck: c_type[3])
 end
 
-deck = Deck.new(game)
+deck = CardDeck.new(game).shuffle
+role_deck = RoleDeck.new(game).assign
+character_deck = CharacterDeck.new(game).assign

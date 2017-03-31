@@ -8,5 +8,4 @@ class Player < ActiveRecord::Base
 	scope deputies: { joins(:roles).where(roles: {type: 'Deputy'}) }
 	scope outlaws: { joins(:roles).where(roles: {type: 'Outlaw'}) }
 	scope renegade: { joins(:roles).where(roles: {type: 'Renegade'}).first }
-
 end

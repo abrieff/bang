@@ -1,9 +1,11 @@
-class Deck
+class CardDeck
+  attr_accessor :game, :cards
+
   def initialize(game)
     @game = game
     CardType.all.each do |card_type|
       card_type.num_per_deck.times do |i|
-        Card.create(card_type: card_type, game: game)
+        Card.find_or_create_by(card_type: card_type, game: game)
       end
     end
   end
@@ -16,9 +18,7 @@ class Deck
     end
   end
 
-  private
-
-  def cards_array
-    @cards ||= Card.where(game: game, location: [:deck, :discard]).to_a
+  def cards
+    @cards ||= Card.where(game: game, location: [:deck, :discard])
   end
 end

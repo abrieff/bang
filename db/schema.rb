@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330183727) do
+ActiveRecord::Schema.define(version: 20170331004812) do
 
   create_table "card_types", force: :cascade do |t|
     t.string  "type",           null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170330183727) do
     t.integer "character_id"
     t.integer "role_id"
     t.integer "health",       default: 4
+    t.string  "integer"
   end
 
   create_table "roles", force: :cascade do |t|
