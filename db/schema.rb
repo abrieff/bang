@@ -40,12 +40,12 @@ ActiveRecord::Schema.define(version: 20170331004812) do
   end
 
   create_table "players", force: :cascade do |t|
-    t.integer "user_id",                  null: false
-    t.integer "game_id",                  null: false
+    t.integer "user_id",                            null: false
+    t.integer "game_id",                            null: false
     t.integer "character_id"
     t.integer "role_id"
-    t.integer "health",       default: 4
-    t.string  "integer"
+    t.integer "health",                 default: 4
+    t.integer "secondary_character_id"
   end
 
   create_table "roles", force: :cascade do |t|

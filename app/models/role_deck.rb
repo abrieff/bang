@@ -28,18 +28,18 @@ class RoleDeck
   private
 
   def four_roles
-    [Sheriff.first, Outlaw.take(2), Renegade.first].shuffle
+    [Sheriff.first, Outlaw.take(2), Renegade.first].flatten.shuffle
   end
 
   def five_roles
-    [Sheriff.first, Outlaw.take(2), Deputy.first, Renegade.first].shuffle
+    [Sheriff.first, Outlaw.take(2), Deputy.first, Renegade.first].flatten.shuffle
   end
 
   def six_roles
-    [Sheriff.first, Outlaw.take(3), Deputy.first, Renegade.first].shuffle
+    [Sheriff.first, Outlaw.take(3), Deputy.first, Renegade.first].flatten.shuffle
   end
 
   def seven_roles
-    [Sheriff.first, Outlaw.take(3), Deputy.take(2), Renegade.first].shuffle
+    [Sheriff.first, Outlaw.take(3), Deputy.take(2), Renegade.first].flatten.shuffle
   end
 end

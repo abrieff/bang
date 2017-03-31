@@ -5,6 +5,6 @@ class Game < ActiveRecord::Base
   after_create :create_deck
 
   def create_deck
-    Deck.new(self)
+    CardDeck.new(self)
   end
 end

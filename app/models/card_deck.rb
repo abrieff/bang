@@ -11,7 +11,7 @@ class CardDeck
   end
 
   def shuffle
-    positions = (0..cards.length - 1).shuffle
+    positions = (0..cards.length - 1).to_a.shuffle
     cards.each_with_index do |card, index|
       card.position = positions[index]
       card.save
