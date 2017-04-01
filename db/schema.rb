@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331004812) do
+ActiveRecord::Schema.define(version: 20170331231746) do
+
+  create_table "actions", force: :cascade do |t|
+    t.string   "type"
+    t.integer  "card_id"
+    t.integer  "player_id"
+    t.integer  "recipient_id"
+    t.integer  "game_id"
+    t.integer  "response_from_action_id"
+    t.string   "status"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "card_types", force: :cascade do |t|
     t.string  "type",           null: false
@@ -29,14 +41,23 @@ ActiveRecord::Schema.define(version: 20170331004812) do
   end
 
   create_table "characters", force: :cascade do |t|
-    t.string  "name",                     null: false
+    t.string  "name",                      null: false
     t.text    "description"
-    t.integer "ability_type"
-    t.integer "health",       default: 4, null: false
+    t.integer "health",        default: 4, null: false
+    t.string  "modifier_type"
   end
 
   create_table "games", force: :cascade do |t|
     t.string "name", null: false
+  end
+
+  create_table "modifiers", force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "game_id"
+    t.integer "parentable_id"
+    t.string  "parentable_type"
+    t.string  "name"
+    t.string  "description"
   end
 
   create_table "players", force: :cascade do |t|

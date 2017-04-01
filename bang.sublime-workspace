@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"dis",
+				"discard_cards"
+			],
+			[
+				"next",
+				"next_equipped_position"
+			],
+			[
+				"max",
+				"maximum"
+			],
+			[
+				"char",
+				"character_deck"
+			],
+			[
+				"rol",
+				"role_deck"
+			],
+			[
+				"num",
+				"num_per_deck"
+			],
+			[
+				"cha",
+				"character_index"
+			],
+			[
+				"posit",
+				"positions"
+			],
+			[
+				"ca",
+				"card_type"
+			],
+			[
+				"she",
+				"sheriff"
+			],
+			[
 				"outl",
 				"outlaws_team_wins"
 			],
@@ -42,10 +82,6 @@
 			[
 				"str",
 				"string_hash"
-			],
-			[
-				"max",
-				"max_heap"
 			],
 			[
 				"min",
@@ -380,66 +416,228 @@
 	"buffers":
 	[
 		{
+			"file": "db/seeds.rb",
+			"settings":
+			{
+				"buffer_size": 1319,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/character_deck.rb",
+			"settings":
+			{
+				"buffer_size": 467,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/role_deck.rb",
+			"settings":
+			{
+				"buffer_size": 900,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/player.rb",
+			"settings":
+			{
+				"buffer_size": 1147,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/migrate/20170331004812_add_secondary_character_to_player.rb",
+			"settings":
+			{
+				"buffer_size": 225,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/card_deck.rb",
+			"settings":
+			{
+				"buffer_size": 1037,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/role.rb",
+			"settings":
+			{
+				"buffer_size": 36,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app/models/win_checker.rb",
 			"settings":
 			{
-				"buffer_size": 872,
+				"buffer_size": 931,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Searching 1167 files for \"GamesUser\" (case sensitive)\n\n0 matches across 0 files\n",
+			"contents": "class Card < ActiveRecord::Base\n\n  belongs_to :card_type\n  belongs_to :game\n	enum location: [:deck, :hand, :equipped, :discard]\n\n  default_scope { order(:position) }\n  scope :hand, -> { where(location: :hand) }\n  scope :deck, -> { where(location: :deck) }\n  scope :discard, -> { where(location: :discard) }\n  scope :equipped, -> { where(location: :equipped) }\n  scope :unowned_cards, -> { where(location: [:deck, :discard])}\n  scope :game, -> (game) { where(game: game) }\nend\n",
+			"file": "app/models/card.rb",
+			"file_size": 588,
+			"file_write_time": 1490926123000000,
 			"settings":
 			{
-				"buffer_size": 80,
+				"buffer_size": 476,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/card_types/bang_card.rb",
+			"settings":
+			{
+				"buffer_size": 171,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/card_types/panic.rb",
+			"settings":
+			{
+				"buffer_size": 27,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/migrate/20170331031700_add_actions_table.rb",
+			"settings":
+			{
+				"buffer_size": 274,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 1933,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "class CreateInitialSchema < ActiveRecord::Migration[5.0]\n  def change\n    create_table :users do |t|\n    	t.string :first_name, null: false\n    	t.string :last_name, null: false\n    	t.string :email\n    	t.string :password\n    	t.string :nickname\n    	t.integer :total_score\n    	t.timestamps\n    end\n\n    create_table :games do |t|\n    	t.string :name, null: false\n    end\n\n    create_table :players do |t|\n    	t.integer :user_id, null: false\n    	t.integer :game_id, null: false\n    	t.integer :character_id\n    	t.integer :role_id\n    	t.integer :health, default: 4\n	end\n\n	create_table :roles do |t|\n		t.string :type, null: false, default: 'Outlaw'\n		t.text :description\n	end\n\n	create_table :characters do |t|\n		t.string :name, null: false\n		t.text :description\n		t.integer :ability_type\n		t.integer :health, null: false, default: 4\n	end\n\n	create_table :card_types do |t|\n		t.string :type, null: false\n		t.string :name, null: false\n		t.text :description\n    t.integer :num_per_deck\n		t.string :image_filename\n	end\n\n	create_table :cards do |t|\n		t.integer :game_id, null: false\n		t.integer :location, default: 'deck', null: false\n		t.integer :games_user_id\n		t.integer :position\n		t.integer :card_type_id, null: false\n	end\n\n 	add_foreign_key :players, :games\n 	add_foreign_key :players, :users\n 	add_foreign_key :players, :roles\n 	add_foreign_key :players, :characters\n 	add_foreign_key :cards, :games\n 	add_foreign_key :cards, :games_users\n 	add_foreign_key :cards, :card_types\n  end\nend\n",
+			"file": "db/migrate/20170330183727_create_initial_schema.rb",
+			"file_size": 1488,
+			"file_write_time": 1490924906000000,
+			"settings":
+			{
+				"buffer_size": 1492,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/assets/characters.csv",
+			"settings":
+			{
+				"buffer_size": 3367,
 				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
+				"name": "characters.csv"
 			}
 		},
 		{
-			"contents": "class Player < ActiveRecord::Base\n	belongs_to :user\n	belongs_to :game\n	belongs_to :character\n	belongs_to :role\n\n	scope sheriff: { joins(:roles).where(roles: {type: 'Sheriff'}).first }\n	scope deputies: { joins(:roles).where(roles: {type: 'Deputy'}) }\n	scope outlaws: { joins(:roles).where(roles: {type: 'Outlaw'}) }\n	scope renegade: { joins(:roles).where(roles: {type: 'Renegade'}).first }\nend",
-			"file": "app/models/player.rb",
-			"file_size": 393,
-			"file_write_time": 1490918149000000,
+			"file": "lib/assets/card_types.csv",
 			"settings":
 			{
-				"buffer_size": 392,
-				"line_ending": "Unix"
+				"buffer_size": 1418,
+				"line_ending": "Unix",
+				"name": "card_types.csv"
 			}
 		},
 		{
 			"file": "app/models/game.rb",
 			"settings":
 			{
-				"buffer_size": 91,
+				"buffer_size": 168,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/models/user.rb",
+			"file": "db/schema.rb",
 			"settings":
 			{
-				"buffer_size": 90,
+				"buffer_size": 2397,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "db/migrate/20170330183727_create_initial_schema.rb",
+			"file": "app/models/card_types/beer.rb",
 			"settings":
 			{
-				"buffer_size": 1464,
+				"buffer_size": 92,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "class Role < ActiveRecord::Base\n\n\nend",
-			"file": "app/models/role.rb",
-			"file_size": 127,
-			"file_write_time": 1490915636000000,
+			"file": "app/models/card_types/cat_balou.rb",
 			"settings":
 			{
-				"buffer_size": 37,
+				"buffer_size": 133,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/card_types/gatling.rb",
+			"settings":
+			{
+				"buffer_size": 165,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/card_types/indians.rb",
+			"settings":
+			{
+				"buffer_size": 166,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/web_sockets/actions_controller.rb",
+			"settings":
+			{
+				"buffer_size": 213,
+				"line_ending": "Unix",
+				"name": "class WebSockets::ActionsController < WebsocketRai"
+			}
+		},
+		{
+			"file": "app/controllers/web_sockets/games_controller.rb",
+			"settings":
+			{
+				"buffer_size": 186,
+				"line_ending": "Unix",
+				"name": "games_controller.rb"
+			}
+		},
+		{
+			"file": "config/events.rb",
+			"settings":
+			{
+				"buffer_size": 786,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/cable.js",
+			"settings":
+			{
+				"buffer_size": 422,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/initializers/websocket_rails.rb",
+			"settings":
+			{
+				"buffer_size": 2620,
 				"line_ending": "Unix"
 			}
 		}
@@ -468,31 +666,54 @@
 	},
 	"file_history":
 	[
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/bang_card.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/db/seeds.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/bang.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/sheriff.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/remington.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_type.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/db/migrate/20170330183727_create_initial_schema.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/deputy.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/renegade.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/outlaw.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/games_user.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/role.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/config/application.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/db/schema.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/card.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/db/migrate/20170330183727_create_initial_schema.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_deck.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/game.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/class RoleDeck",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/role_deck.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/role.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/win_checker.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/player.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/user.rb",
+		"/Users/andrewbrieff1/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/class Deck",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/bang_card.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/beer.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/cat_balou.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/duel.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/gatling.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/general_store.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/indians.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/missed.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/panic.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/saloon.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/stagecoach.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/wells_fargo.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/barrel.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/dynamite.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/jail.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/mustang.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/db/seeds.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/character_deck.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/tmp/cache/assets/sprockets/v3.0/Ew/EwFjtXD7kdEdqMKdAPCG7Gv5Fu_WdjDM2rFIkCNR66U.cache",
+		"/Users/andrewbrieff1/Documents/github/bang/db/migrate/20170331004812_add_secondary_character_to_player.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/bang.sublime-project",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/bang.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/sheriff.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/remington.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_type.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/deputy.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/renegade.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/roles/outlaw.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/app/models/games_user.rb",
+		"/Users/andrewbrieff1/Documents/github/bang/config/application.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/rev_carbine.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/schofield.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/scope.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/volcanic.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_types/winchester.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/win_checker.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/game.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/beer.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/cat_balou.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/duel.rb",
@@ -507,15 +728,12 @@
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/class WinChecker",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/equip_card_type.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/Gemfile",
-		"/Users/andrewbrieff1/Documents/github/bang/db/schema.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/jail.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_type.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/action_card_types/untitled",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/character.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/bang.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/card_types/missed.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/ability.rb",
-		"/Users/andrewbrieff1/Documents/github/bang/app/models/user.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/class User < ActiveRecord::Base",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/game_user.rb",
 		"/Users/andrewbrieff1/Documents/github/bang/app/models/sheriff.rb",
@@ -575,27 +793,7 @@
 		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/users_message_thread.rb",
 		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/message.rb",
 		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/user.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/db/migrate/20170308152814_initial_db_schema.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/spec/controllers/message_threads_controller_spec.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/db/seeds.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/db/schema.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/message_thread.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/app/controllers/messages_controller.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/spec/controllers/messages_controller_spec.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/care_manager.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/patient.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/app/controllers/api/message_threads_controller.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/app/controllers/api/messages_controller.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/app/controllers/application_controller.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/config/routes.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/app/models/organization.rb",
-		"/Users/andrewbrieff1/Documents/github/wellframe/Gemfile",
-		"/Data Structures:",
-		"/Users/andrewbrieff1/Documents/ruby_practice/linked_list/linked_list.rb",
-		"/Users/andrewbrieff1/Documents/ruby_practice/linked_list/node.rb",
-		"/Users/andrewbrieff1/Documents/GitHub/travel_blog/db/migrate/20160811213330_create_posts.rb",
-		"/Users/andrewbrieff1/Documents/GitHub/travel_blog/db/migrate/20160811213237_create_posts_table.rb",
-		"/Users/andrewbrieff1/Documents/GitHub/travel_blog/public/robots.txt"
+		"/Users/andrewbrieff1/Documents/github/wellframe/db/migrate/20170308152814_initial_db_schema.rb"
 	],
 	"find":
 	{
@@ -623,6 +821,20 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Player",
+			"| ",
+			"\"",
+			"\",",
+			",\\n",
+			"'",
+			",",
+			"'",
+			",\\n",
+			"]",
+			"[",
+			",\\n",
+			"]",
+			"[",
 			"GamesUser",
 			"Ability",
 			"abilities",
@@ -703,6 +915,16 @@
 		"regex": false,
 		"replace_history":
 		[
+			"|",
+			"",
+			"\"|",
+			"\\n",
+			"\"",
+			"",
+			"\\n",
+			"",
+			"\\n",
+			"",
 			"create",
 			"",
 			"< CardType",
@@ -724,33 +946,29 @@
 	"groups":
 	[
 		{
-			"sheets":
-			[
-			]
-		},
-		{
-			"selected": 6,
+			"selected": 12,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/models/win_checker.rb",
+					"file": "db/seeds.rb",
 					"settings":
 					{
-						"buffer_size": 872,
+						"buffer_size": 1319,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								48,
-								48
+								695,
+								695
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -760,28 +978,25 @@
 				},
 				{
 					"buffer": 1,
+					"file": "app/models/character_deck.rb",
 					"settings":
 					{
-						"buffer_size": 80,
+						"buffer_size": 467,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								467,
+								467
 							]
 						],
 						"settings":
 						{
-							"detect_indentation": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -791,23 +1006,25 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/models/player.rb",
+					"file": "app/models/role_deck.rb",
 					"settings":
 					{
-						"buffer_size": 392,
+						"buffer_size": 900,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								388,
-								388
+								298,
+								298
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -817,18 +1034,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "app/models/game.rb",
+					"file": "app/models/player.rb",
 					"settings":
 					{
-						"buffer_size": 91,
+						"buffer_size": 1147,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								86,
-								86
+								841,
+								841
 							]
 						],
 						"settings":
@@ -843,18 +1060,18 @@
 				},
 				{
 					"buffer": 4,
-					"file": "app/models/user.rb",
+					"file": "db/migrate/20170331004812_add_secondary_character_to_player.rb",
 					"settings":
 					{
-						"buffer_size": 90,
+						"buffer_size": 225,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								86,
-								86
+								139,
+								139
 							]
 						],
 						"settings":
@@ -869,26 +1086,28 @@
 				},
 				{
 					"buffer": 5,
-					"file": "db/migrate/20170330183727_create_initial_schema.rb",
+					"file": "app/models/card_deck.rb",
 					"settings":
 					{
-						"buffer_size": 1464,
+						"buffer_size": 1037,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1330,
-								1330
+								459,
+								459
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 181.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -898,20 +1117,722 @@
 					"file": "app/models/role.rb",
 					"settings":
 					{
-						"buffer_size": 37,
+						"buffer_size": 36,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								33,
-								33
+								36,
+								36
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/models/win_checker.rb",
+					"settings":
+					{
+						"buffer_size": 931,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								383,
+								383
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/models/card.rb",
+					"settings":
+					{
+						"buffer_size": 476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								476,
+								476
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/models/card_types/bang_card.rb",
+					"settings":
+					{
+						"buffer_size": 171,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								171,
+								171
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/models/card_types/panic.rb",
+					"settings":
+					{
+						"buffer_size": 27,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22,
+								22
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "db/migrate/20170331031700_add_actions_table.rb",
+					"settings":
+					{
+						"buffer_size": 274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								274,
+								274
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 1933,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								900,
+								900
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 137.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 19,
+			"sheets":
+			[
+				{
+					"buffer": 13,
+					"file": "db/migrate/20170330183727_create_initial_schema.rb",
+					"settings":
+					{
+						"buffer_size": 1492,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1146,
+								1159
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/models/character_deck.rb",
+					"settings":
+					{
+						"buffer_size": 467,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								332,
+								332
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "lib/assets/characters.csv",
+					"settings":
+					{
+						"buffer_size": 3367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								113,
+								113
+							]
+						],
+						"settings":
+						{
+							"auto_name": "characters.csv",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "lib/assets/card_types.csv",
+					"settings":
+					{
+						"buffer_size": 1418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								802,
+								802
+							]
+						],
+						"settings":
+						{
+							"auto_name": "card_types.csv",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "app/models/game.rb",
+					"settings":
+					{
+						"buffer_size": 168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								168,
+								168
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/models/card_deck.rb",
+					"settings":
+					{
+						"buffer_size": 1037,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								254,
+								254
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "db/schema.rb",
+					"settings":
+					{
+						"buffer_size": 2397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1220,
+								1220
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/role_deck.rb",
+					"settings":
+					{
+						"buffer_size": 900,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								882,
+								882
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/models/card.rb",
+					"settings":
+					{
+						"buffer_size": 476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								476,
+								476
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/models/player.rb",
+					"settings":
+					{
+						"buffer_size": 1147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								551,
+								551
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 0,
+					"file": "db/seeds.rb",
+					"settings":
+					{
+						"buffer_size": 1319,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1318,
+								1318
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "app/models/card_types/beer.rb",
+					"settings":
+					{
+						"buffer_size": 92,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								92,
+								92
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "app/models/card_types/cat_balou.rb",
+					"settings":
+					{
+						"buffer_size": 133,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								128,
+								128
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "app/models/card_types/gatling.rb",
+					"settings":
+					{
+						"buffer_size": 165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								160,
+								160
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "app/models/card_types/indians.rb",
+					"settings":
+					{
+						"buffer_size": 166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								166,
+								166
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "app/controllers/web_sockets/actions_controller.rb",
+					"settings":
+					{
+						"buffer_size": 213,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								202,
+								202
+							]
+						],
+						"settings":
+						{
+							"auto_name": "class WebSockets::ActionsController < WebsocketRai",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "app/controllers/web_sockets/games_controller.rb",
+					"settings":
+					{
+						"buffer_size": 186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								173
+							]
+						],
+						"settings":
+						{
+							"auto_name": "games_controller.rb",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "config/events.rb",
+					"settings":
+					{
+						"buffer_size": 786,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								781,
+								781
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "app/assets/javascripts/cable.js",
+					"settings":
+					{
+						"buffer_size": 422,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								399,
+								399
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "config/initializers/websocket_rails.rb",
+					"settings":
+					{
+						"buffer_size": 2620,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								700,
+								700
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -950,7 +1871,7 @@
 		"cols":
 		[
 			0.0,
-			0.341608321464,
+			0.392861132694,
 			1.0
 		],
 		"rows":
@@ -971,16 +1892,116 @@
 		"selected_items":
 		[
 			[
-				"migrate",
-				"db/migrate/20170330183727_create_initial_schema.rb"
+				"gem",
+				"Gemfile"
+			],
+			[
+				"add_acti",
+				"db/migrate/20170331031700_add_actions_table.rb"
+			],
+			[
+				"card_type",
+				"lib/assets/card_types.csv"
+			],
+			[
+				"player",
+				"app/models/player.rb"
+			],
+			[
+				"beer",
+				"app/models/card_types/beer.rb"
 			],
 			[
 				"card",
 				"app/models/card.rb"
 			],
 			[
+				"card.",
+				"app/models/card.rb"
+			],
+			[
+				"deck",
+				"app/models/card_deck.rb"
+			],
+			[
+				"seeds",
+				"db/seeds.rb"
+			],
+			[
+				"pl",
+				"app/models/player.rb"
+			],
+			[
+				"",
+				"db/migrate/20170330183727_create_initial_schema.rb"
+			],
+			[
+				"sche",
+				"db/schema.rb"
+			],
+			[
+				"win_chec",
+				"app/models/win_checker.rb"
+			],
+			[
+				"role",
+				"app/models/role.rb"
+			],
+			[
+				"add_se",
+				"db/migrate/20170331004812_add_secondary_character_to_player.rb"
+			],
+			[
+				"role_de",
+				"app/models/role_deck.rb"
+			],
+			[
+				"role_d",
+				"app/models/role_deck.rb"
+			],
+			[
+				"character_de",
+				"app/models/character_deck.rb"
+			],
+			[
+				"card_dec",
+				"app/models/card_deck.rb"
+			],
+			[
+				"game",
+				"app/models/game.rb"
+			],
+			[
+				"add_sec",
+				"db/migrate/20170331004812_add_secondary_character_to_player.rb"
+			],
+			[
+				"seed",
+				"db/seeds.rb"
+			],
+			[
+				"card_de",
+				"app/models/card_deck.rb"
+			],
+			[
+				"play",
+				"app/models/player.rb"
+			],
+			[
+				"eed",
+				"tmp/cache/assets/sprockets/v3.0/Ew/EwFjtXD7kdEdqMKdAPCG7Gv5Fu_WdjDM2rFIkCNR66U.cache"
+			],
+			[
+				"schem",
+				"db/migrate/20170330183727_create_initial_schema.rb"
+			],
+			[
 				"see",
 				"db/seeds.rb"
+			],
+			[
+				"migrate",
+				"db/migrate/20170330183727_create_initial_schema.rb"
 			],
 			[
 				"games_us",
@@ -1011,24 +2032,12 @@
 				"config/schedule.rb"
 			],
 			[
-				"gem",
-				"Gemfile"
-			],
-			[
 				"schedule",
 				"config/schedule.rb"
 			],
 			[
-				"sche",
-				"db/schema.rb"
-			],
-			[
 				"application_jo",
 				"app/jobs/application_job.rb"
-			],
-			[
-				"schem",
-				"db/schema.rb"
 			],
 			[
 				"timeshe",
@@ -1089,10 +2098,6 @@
 			[
 				"truck_ty",
 				"app/models/truck_type.rb"
-			],
-			[
-				"seed",
-				"db/seeds.rb"
 			],
 			[
 				"add_new",
@@ -1265,10 +2270,6 @@
 			[
 				"users_",
 				"app/models/users_message_thread.rb"
-			],
-			[
-				"",
-				"app/controllers/message_threads_controller.rb"
 			],
 			[
 				"users",

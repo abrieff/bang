@@ -4,36 +4,44 @@ class Player < ActiveRecord::Base
 	belongs_to :character
 	belongs_to :role
   has_many :cards
+  has_many :modifiers
 
 	scope :sheriff, -> { joins(:roles).where(roles: {type: 'Sheriff'}).first }
 	scope :deputies, -> { joins(:roles).where(roles: {type: 'Deputy'}) }
 	scope :outlaws, -> { joins(:roles).where(roles: {type: 'Outlaw'}) }
 	scope :renegade, -> { joins(:roles).where(roles: {type: 'Renegade'}).first }
   scope :live, -> { where('health > 0') }
+  scope :all_recipients, -> (player) { where.not.(player_id: player.id) }
+
+  after_save :set_character_modifier, if: :character_id_changed?
+
+  def set_character_modifier
+    modifiers.from_character.destroy_all
+    modifiers.create(game: game, parentable: character, name: character.modifier_type, description: character.description)
+  end
 
   def dead?
     health == 0
   end
 
   def draw(card)
-    card.update(location: :hand, position: next_hand_position, player_id: id)
+    card.draw(self)
+  end
+
+  def complete_decision(card)
+    card.update(location: :hand, position: next_position(:hand))
+    cards.decision.each { |card| card.discard }
   end
 
   def equip(card)
-    card.update(location: :equipped, position: next_equipped_position)
+    card.equip
   end
 
-  def discard(card, deck)
-    card.discard(deck)
+  def discard(card)
+    card.discard
   end
 
-  private
-
-  def next_hand_position
-    (cards.hand.maximum(:position) || -1) + 1
-  end
-
-  def next_equipped_position
-    (cards.equipped.maximum(:position) || -1) + 1
+  def next_position(location)
+    (cards.where(location: location).maximum(:position) || -1) + 1
   end
 end

@@ -1,0 +1,2 @@
+class PlayAction < Action
+end

@@ -3,6 +3,9 @@ class CardDeck
 
   def initialize(game)
     @game = game
+  end
+
+  def initialize_cards
     CardType.all.each do |card_type|
       card_type.num_per_deck.times do |i|
         Card.find_or_create_by(card_type: card_type, game: game)
@@ -31,13 +34,13 @@ class CardDeck
   end
 
   def discard(card)
-    update(location: :discard, position: next_discard_position, player_id: nil)
+    update(location: :discard, position: next_position(:discard), player_id: nil)
   end
 
   private
 
-  def next_discard_position
-    (discard_cards.maximum(:position) || -1) + 1
+  def next_position(location)
+    (cards.where(location: location).maximum(:position) || -1) + 1
   end
 
   def unowned_cards
@@ -50,6 +53,10 @@ class CardDeck
 
   def discard_cards
     Card.game(game).discard
+  end
+
+  def cards
+    Card.game(game)
   end
 
   def players

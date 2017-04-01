@@ -30,8 +30,8 @@ class CreateInitialSchema < ActiveRecord::Migration[5.0]
 	create_table :characters do |t|
 		t.string :name, null: false
 		t.text :description
-		t.integer :ability_type
 		t.integer :health, null: false, default: 4
+    t.string :modifier_type
 	end
 
 	create_table :card_types do |t|

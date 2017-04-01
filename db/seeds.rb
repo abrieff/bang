@@ -13,7 +13,7 @@ game = Game.create(name: "Sample Game")
 end
 
 CSV.foreach("lib/assets/characters.csv", {headers: true, col_sep: '|'}) do |row|
-	Character.create(name: row[0], description: row[1], health: row[2])
+	Character.create(name: row[0], description: row[1], health: row[2], modifier_type: row[3])
 end
 
 CSV.foreach("lib/assets/card_types.csv", {headers: true, col_sep: '|'}) do |row|
@@ -36,6 +36,7 @@ deck = CardDeck.new(game)
 role_deck = RoleDeck.new(game)
 character_deck = CharacterDeck.new(game)
 
+deck.initialize_cards
 deck.shuffle
 role_deck.assign
 character_deck.assign
