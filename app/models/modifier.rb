@@ -5,6 +5,8 @@ class Modifier < ActiveRecord::Base
 
   scope :from_character, -> { where(parentable_type: 'Character') }
   scope :from_card, -> { where(parentable_type: 'Card') }
+  scope :scopes, -> { where(name: SCOPE) }
+  scope :guns, -> { where(name: GUNS) }
 
   DRAW_ON_LOSS = 'DrawOnLoss'
   SECOND_DRAW_SHOW_FOR_THIRD = 'SecondDrawShowForThird'
@@ -28,4 +30,11 @@ class Modifier < ActiveRecord::Base
   BANG_EQUALS_MISSED = 'BangEqualsMissed'
   JAIL = 'Jail'
   DYNOMITE = 'Dynomite'
+  GUNS = [VOLCANIC, SCHOFIELD, REMINGTON, REV_CARBINE, WINCHESTER]
+
+
+  def gun_scope
+    return 0 unless GUNS.include(name)
+    GUNS.find_index(name)
+  end
 end

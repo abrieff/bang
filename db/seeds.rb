@@ -17,7 +17,7 @@ CSV.foreach("lib/assets/characters.csv", {headers: true, col_sep: '|'}) do |row|
 end
 
 CSV.foreach("lib/assets/card_types.csv", {headers: true, col_sep: '|'}) do |row|
- 	CardType.create(type: row[0], name: row[1], description: row[2], num_per_deck: row[3])
+ 	CardType.create(type: row[0], name: row[1], description: row[2], num_per_deck: row[3], distance: row[4])
 end
 
 roles = ['Sheriff', 'Deputy', 'Deputy', 'Outlaw', 'Outlaw', 'Outlaw', 'Renegade']
@@ -29,7 +29,7 @@ users = User.all.to_a
 (0..6).each do |i|
 	# puts users[i].id
 	# puts game.id
-	Player.create(user: users[i], game: game)
+	Player.create(user: users[i], game: game, location: i)
 end
 
 deck = CardDeck.new(game)

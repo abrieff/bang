@@ -19,6 +19,7 @@ class CreateInitialSchema < ActiveRecord::Migration[5.0]
     	t.integer :game_id, null: false
     	t.integer :character_id
     	t.integer :role_id
+      t.integer :location, null: false
     	t.integer :health, default: 4
 	end
 
@@ -39,6 +40,7 @@ class CreateInitialSchema < ActiveRecord::Migration[5.0]
 		t.string :name, null: false
 		t.text :description
     t.integer :num_per_deck
+    t.integer :distance
 		t.string :image_filename
 	end
 

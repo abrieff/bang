@@ -10,9 +10,9 @@ class DrawAmountChecker
   def process
     case draw_type
     when PHASE_ONE_DRAW_ONE
-      draw_one_amount_checker
+      phase_one_draw_one_amount_checker
     when PHASE_ONE_DRAW_TWO
-      draw_two_amount_checker
+      phase_one_draw_two_amount_checker
     when RESPONSE_DRAW
       response_draw_amount_checker
     else
@@ -20,7 +20,7 @@ class DrawAmountChecker
     end
   end
 
-  def draw_one_amount_checker
+  def phase_one_draw_one_amount_checker
     if player.modifiers.where(name: Modifier::DRAW_THREE_CHOOSE_TWO)
       return_options(amount: 3, choose: 2)
     else
@@ -28,7 +28,7 @@ class DrawAmountChecker
     end
   end
 
-  def draw_two_amount_checker
+  def phase_one_draw_two_amount_checker
     if player.modifiers.where(name: Modifier::SECOND_DRAW_SHOW_FOR_THIRD)
       return_options(show: true)
     elsif player.modifers.where(name: Modifier::DRAW_THREE_CHOOSE_TWO)

@@ -44,4 +44,18 @@ class Player < ActiveRecord::Base
   def next_position(location)
     (cards.where(location: location).maximum(:position) || -1) + 1
   end
+
+  def scope
+    modifiers.scopes.count + modifiers.from_card.guns.first.gunscope + 1
+  end
+
+  def distance
+    modifiers.where(name: Modifier::MUSTANG).count + 1
+  end
+
+  def distance_from(other_player)
+    forward_distance = (player.location - other_player.location).abs
+    backward_distance = game.players.count - forward_distance
+    [forward_distance, backward_distance].min + (other_player.distance - 1)
+  end
 end
